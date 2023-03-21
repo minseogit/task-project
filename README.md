@@ -17,7 +17,7 @@
 
 |구분|Skill|
 |:--|:--|
-|언어 | Java 17|
+|언어 | Java 11|
 |프레임워크 | SpringBoot 2.7.9|
 |DBMS | H2|
 |빌드 툴| Gradle|
@@ -34,7 +34,7 @@
 |keyword | String|
 |count | int|
 
-검색 내역을 저장하는 테이블로 ID, 검색키워드, 검색횟수로 구성
+검색 내역을 저장하는 테이블로 ID, 검색키워드, 검색횟수로 구성되어 있습니다.
 
 <br>
 
@@ -105,7 +105,7 @@
 |INVALID_SEARCH_API_TYPE|API TYPE이 유효하지 않습니다.|
 |API_CALL_ERROR|API 호출에 실패했습니다.|
 |INVALID_PARAMETER|유효하지 않은 파라미터가 포함되어 있습니다.|
-|INTERNAL_SERVER_ERROR|Internal server error가 발생했습니다.|
+|INTERNAL_SERVER_ERROR|내부 서버에 오류가 발생했습니다.|
 
 <br>
 
@@ -114,6 +114,6 @@
 |라이브러리|사용 이유|
 |:--|:--|
 |Spring Cloud OpenFeign|인터페이스 기반으로 HTTP 요청을 간단한 코드로 구현 가능|
-|Spring Cloud Resilience4j|API 호출시 클라이언트에게 에러가 아닌 다른 응답을 제공하기 위한 Circuit Breaker로 사용.<br> 카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 호출할 수 있도록 구현했습니다.|
+|Spring Cloud Resilience4j|API 호출시 클라이언트에게 에러가 아닌 다른 응답을 제공하기 위한 Circuit Breaker로 사용.<br> 카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 호출하기 위해 사용했습니다.|
 |Swagger|API 문서화를 자동화하고 테스트|
 |Lombok|자주 사용하는 코드 자동 생성|
