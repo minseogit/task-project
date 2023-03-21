@@ -1,3 +1,6 @@
+server:
+  port: 8318
+
 spring:
   datasource:
     url: jdbc:h2:tcp://localhost/~/blog
@@ -5,15 +8,17 @@ spring:
     password:
     driver-class-name: org.h2.Driver
   jpa:
-    hibernate:
-      ddl-auto: create
+    hibernate.hbm2ddl.auto: update
+#    hibernate:
+#      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
   mvc:
       pathmatch:
         matching-strategy: ant_path_matcher
-
+  main:
+    allow-bean-definition-overriding: true
 
 logging:
   level:
@@ -22,3 +27,26 @@ logging:
         SQL: debug
       springframework:
         web: debug
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        loggerLevel: full
+        connectTimeout: 5000
+        readTimeout: 5000
+
+logging.level.com.my.blog: DEBUG
+
+client:
+  kakao:
+    url: https://dapi.kakao.com
+    path: /v2/search/blog.json
+    auth: 7c8990a7e6d5ec57fda2b9b00e4509bc
+  naver:
+    url: https://openapi.naver.com
+    path: /v1/search/blog.json
+    client-id: IWFlxwQALjhYWjg0CgK5
+    client-secret: 7tBFYBsBVp
