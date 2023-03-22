@@ -10,8 +10,8 @@ public class KakaoSearchClientConfig {
 
     @Bean
     public RequestInterceptor requestInterceptor() {
-        return requestTemplate -> {
-            requestTemplate.header("Authorization", "KakaoAK " + auth);
+        return template -> {
+            template.header("Authorization", "KakaoAK " + auth);
         };
     }
 }

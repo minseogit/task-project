@@ -7,7 +7,12 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(url = "${client.kakao.url}", name = "KakaoSearchBlogClient", configuration= KakaoSearchClientConfig.class)
+@FeignClient(
+        url = "${client.kakao.url}",
+        name = "KakaoSearchBlogClient",
+        configuration= KakaoSearchClientConfig.class,
+        fallbackFactory = KakaoSearchBlogClientFallbackFactory.class
+)
 public interface KakaoSearchBlogClient {
 
     @GetMapping(value = "${client.kakao.path}")

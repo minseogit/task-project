@@ -1,12 +1,8 @@
 package com.my.blog.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -17,7 +13,7 @@ import java.time.LocalDateTime;
 public class BaseEntity {
 
     @CreationTimestamp
-    @Column(nullable = false, length = 20, updatable = false)
+    @Column(nullable = false, updatable = false, length = 20)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

@@ -10,25 +10,18 @@ import com.my.blog.app.search.enums.SearchSortType;
 import com.my.blog.app.search.error.SearchErrorCode;
 import com.my.blog.app.search.error.SearchException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
-import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class SearchNaverApiCall implements SearchApiCall {
 
-    private final CircuitBreakerFactory circuitBreakerFactory;
     private final NaverSearchBlogClient naverSearchBlogClient;
 
     @Override
     public SearchBlogResponse apiCall(SearchBlogRequest request) {
-        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("circuitbreakerNaver");
-        SearchBlogNaverResponse response = circuitBreaker.run(() -> naverSearchBlogClient.searchBlog(request.getQuery(), request.getPage(), request.getSize(), sortToNaver(request.getSort())),
-                throwable -> {
-                    return null;
-                });
-        if(response == null) throw new SearchException(SearchErrorCode.API_CALL_ERROR); //Naver도 실패시 Error 처리
+        SearchBlogNaverResponse response = naverSearchBlogClient.searchBlog(request.getQuery(), request.getPage(), request.getSize(), sortToNaver(request.getSort()));
+        if(response == null) throw new SearchException(SearchErrorCode.API_CALL_ERROR);
         return SearchDtoConverter.convert(response);
     }
 

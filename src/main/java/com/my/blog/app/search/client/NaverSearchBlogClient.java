@@ -7,7 +7,12 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(url = "${client.naver.url}", name = "NaverSearchBlogClient", configuration= NaverSearchClientConfig.class)
+@FeignClient(
+        url = "${client.naver.url}",
+        name = "NaverSearchBlogClient",
+        configuration= NaverSearchClientConfig.class,
+        fallbackFactory = NaverSearchBlogClientFallbackFactory.class
+)
 public interface NaverSearchBlogClient {
 
     @GetMapping(value = "${client.naver.path}")

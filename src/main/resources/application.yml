@@ -27,9 +27,10 @@ logging:
         SQL: debug
       springframework:
         web: debug
+    com.my.blog: debug
 
 feign:
-  hystrix:
+  circuitbreaker:
     enabled: true
   client:
     config:
@@ -38,7 +39,13 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
 
-logging.level.com.my.blog: DEBUG
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
 
 client:
   kakao:
