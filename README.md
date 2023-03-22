@@ -115,6 +115,6 @@
 |라이브러리|사용 이유|
 |:--|:--|
 |Spring Cloud OpenFeign|인터페이스 기반으로 HTTP 요청을 간단한 코드로 구현 가능|
-|Spring Cloud Resilience4j|API 호출시 클라이언트에게 에러가 아닌 다른 응답을 제공하기 위한 Circuit Breaker로 사용.<br> 카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 호출하기 위해 사용했습니다.|
+|Hystrix|API 호출시 클라이언트에게 에러가 아닌 다른 응답을 제공하기 위한 Circuit Breaker로 사용.<br> OpenFeign이 HystrixFeign라는 Hystrix 기반 Circuit Breaker를 지원하므로 OpenFeign과의 연동을 위해 사용했습니다.|
 |Swagger|API 문서화를 자동화하고 테스트|
 |Lombok|자주 사용하는 코드 자동 생성|
