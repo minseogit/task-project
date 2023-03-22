@@ -1,16 +1,17 @@
 # 블로그 검색 서비스 개발
 ### 1. 블로그 검색
 - 새로운 검색 소스가 추가될 수 있음을 고려해 ApiType으로 호출할 API를 구분했습니다.
-    - ApiType이 존재하지 않으면 INVALID_SEARCH_API_TYPE 에러 코드를 반환합니다.
+    - ApiType이 존재하지 않으면 INVALID_SEARCH_API_TYPE 에러를 반환합니다.
     - Kakao API 호출 실패시 Naver API를 호출합니다.
-    - Naver API 호출 실패시 API_CALL_ERROR 에러코드를 반환합니다.
+    - Naver API 호출 실패시 API_CALL_ERROR 에러를 반환합니다.
 - 검색 내역을 저장하기 위해 기존 검색 이력(SEARCH_HISTORY)을 조회합니다.
     - 기존 검색 내역이 존재하지 않으면 검색 내역을 새로 생성합니다.
+    - 검색 내역 조회시 동시성 이슈를 고려해 비관적 락을 걸어주었습니다.
     - 검색 내역이 존재하면 검색 횟수를 증가합니다.
 
 ### 2. 인기 검색어 목록
 - 사용자들이 많이 검색한 순서대로, 최대 10개의 검색 키워드와 검색 횟수를 조회합니다.
-- 검색어의 검색 내역이 존재하지 않으면 SEARCH_HISTORY_NOT_FOUND 에러코드를 반환합니다.
+- 검색어의 검색 내역이 존재하지 않으면 SEARCH_HISTORY_NOT_FOUND 에러를 반환합니다.
 <br>
 
 ## 개발 환경
