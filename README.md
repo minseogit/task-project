@@ -1,6 +1,6 @@
 # 블로그 검색 서비스 개발
 
-- 빌드 결과물 : [다운로드](https://drive.google.com/file/d/19lcKoHA6qfZND7fjrcNCsF-nBYAzdfgD/view?usp=share_link). <br>
+- 빌드 결과물 : [다운로드](https://drive.google.com/file/d/19lcKoHA6qfZND7fjrcNCsF-nBYAzdfgD/view?usp=share_link) <br>
 - 실행 코드 : `java -jar blog-0.0.1-SNAPSHOT.jar`
 
 ### 1. 블로그 검색
