@@ -4,7 +4,6 @@ import com.my.blog.app.search.dto.kakao.SearchBlogRequest;
 import com.my.blog.app.search.dto.kakao.SearchBlogResponse;
 import com.my.blog.app.search.enums.ApiType;
 import com.my.blog.app.search.enums.SearchSortType;
-import com.my.blog.app.search.enums.factory.SearchBlogServiceFactory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

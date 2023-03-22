@@ -4,7 +4,6 @@ import com.my.blog.app.search.dto.kakao.SearchBlogRequest;
 import com.my.blog.app.search.dto.kakao.SearchBlogResponse;
 import com.my.blog.app.search.entity.SearchHistory;
 import com.my.blog.app.search.enums.ApiType;
-import com.my.blog.app.search.enums.factory.SearchBlogServiceFactory;
 import com.my.blog.app.search.repository.SearchHistoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -3,7 +3,6 @@ package com.my.blog.app.search.controller;
 import com.my.blog.app.search.dto.kakao.SearchBlogRequest;
 import com.my.blog.app.search.dto.kakao.SearchBlogResponse;
 import com.my.blog.app.search.enums.ApiType;
-import com.my.blog.app.search.enums.factory.SearchBlogServiceFactory;
 import com.my.blog.app.search.service.SearchBlogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,6 @@ import javax.validation.Valid;
 public class SearchBlogController {
 
     private final SearchBlogService searchBlogService;
-    private final SearchBlogServiceFactory searchBlogServiceFactory;
 
     @GetMapping("/blogs")
     public ResponseEntity<SearchBlogResponse> searchBlog(@Valid SearchBlogRequest request, ApiType apiType) {
