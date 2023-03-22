@@ -1,6 +1,7 @@
 # 블로그 검색 서비스 개발
 
-빌드 결과물 : [다운로드](https://drive.google.com/file/d/19lcKoHA6qfZND7fjrcNCsF-nBYAzdfgD/view?usp=share_link)
+- 빌드 결과물 : [다운로드](https://drive.google.com/file/d/19lcKoHA6qfZND7fjrcNCsF-nBYAzdfgD/view?usp=share_link). <br>
+- 실행 코드 : `java -jar blog-0.0.1-SNAPSHOT.jar`
 
 ### 1. 블로그 검색
 - 새로운 검색 소스가 추가될 수 있음을 고려해 ApiType으로 호출할 API를 구분했습니다.
@@ -108,7 +109,7 @@
 |SEARCH_HISTORY_NOT_FOUND|검색 결과가 존재하지 않습니다.|
 |INVALID_SEARCH_API_TYPE|API TYPE이 유효하지 않습니다.|
 |API_CALL_ERROR|API 호출에 실패했습니다.|
-|INVALID_PARAMETER|유효하지 않은 파라미터가 포함되어 있습니다.|
+|INVALID_PARAMETER|유효하지 않은  포함되어 있습니다.|
 |INTERNAL_SERVER_ERROR|내부 서버에 오류가 발생했습니다.|
 
 <br>
