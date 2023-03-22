@@ -1,4 +1,7 @@
 # 블로그 검색 서비스 개발
+
+빌드 결과물 : [다운로드](https://drive.google.com/file/d/19lcKoHA6qfZND7fjrcNCsF-nBYAzdfgD/view?usp=share_link)
+
 ### 1. 블로그 검색
 - 새로운 검색 소스가 추가될 수 있음을 고려해 ApiType으로 호출할 API를 구분했습니다.
     - ApiType이 존재하지 않으면 INVALID_SEARCH_API_TYPE 에러를 반환합니다.
