@@ -1,7 +1,8 @@
-package com.my.blog.app.search.enums.factory;
+package com.my.blog.app.search.service;
 
 import com.my.blog.app.search.enums.ApiType;
-import com.my.blog.app.search.service.SearchApiCall;
+import com.my.blog.app.search.error.SearchErrorCode;
+import com.my.blog.app.search.error.SearchException;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -22,6 +23,8 @@ public class SearchBlogServiceFactory {
     }
 
     public static SearchApiCall getSearchApiCallType(ApiType apiType) {
+        SearchApiCall searchApiCall = searchApiCallHashMap.get(apiType);
+        if(searchApiCall == null) throw new SearchException(SearchErrorCode.INVALID_SEARCH_API_TYPE);
         return searchApiCallHashMap.get(apiType);
     }
 }
